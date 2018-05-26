@@ -19,10 +19,21 @@ const content = `
 <script src="https://shadow.elemecdn.com/lib/test@0.0.1/body.js"></script>
 </body>
 </html>
-
 `
+
+
 chrome.webNavigation.onCommitted.addListener((data) => {
-  chrome.tabs.executeScript({
-    code: `document.write(\`${content}\`)`
+  chrome.storage.sync.get('whitelist', (items) => {
+    if (!items['whitelist']) return
+    const list = items['whitelist'].split('\n')
+    const info = new URL(data.url)
+    const domain = info.hostname
+    const host = info.host
+    const result = list.some(item => item === domain || item === host)
+    if (result) {
+      chrome.tabs.executeScript({
+        code: `document.write(\`${content}\`)`
+      })
+    }
   })
-});
+})
