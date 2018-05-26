@@ -3,7 +3,7 @@
   "name": "restc",
   "version": "1.0.0",
   "background": {
-    "scripts": ["index.js"],
+    "scripts": ["./src/index.js"],
     "presistent": false
   },
   "permissions": [
@@ -15,7 +15,7 @@
     "https://*/*"
   ],
   "browser_action": {
-    "default_popup": "settings.html"
+    "default_popup": "./src/settings.html"
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://shadow.elemecdn.com 'sha256-+J1p1MHGYJQoGcnX1Ld/EeRzTw7bRVhaXqKjj2FH1iI='; object-src 'self'"
 }
