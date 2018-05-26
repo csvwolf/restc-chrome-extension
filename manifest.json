@@ -10,8 +10,12 @@
     "webNavigation",
     "tabs",
     "activeTab",
+    "storage",
     "http://*/*",
     "https://*/*"
   ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://shadow.elemecdn.com; object-src 'self'"
+  "browser_action": {
+    "default_popup": "settings.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://shadow.elemecdn.com 'sha256-+J1p1MHGYJQoGcnX1Ld/EeRzTw7bRVhaXqKjj2FH1iI='; object-src 'self'"
 }

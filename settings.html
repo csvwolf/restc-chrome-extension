@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Restc - Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <textarea class="whitelist" placeholder="One line a whitelist domain / port is supported"></textarea>
+  <button class="save">Save</button>
+  <script>
+    chrome.storage.sync.get('whitelist', (item) => {
+      document.querySelector('.whitelist').value = item['whitelist'] || ''
+    })
+    document.querySelector('.save').addEventListener('click', () => {
+      const whitelist = document.querySelector('.whitelist').value
+      chrome.storage.sync.set({ whitelist }, () => {
+      })
+    })
+  </script>
+</body>
+</html>
