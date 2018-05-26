@@ -29,7 +29,7 @@ chrome.webNavigation.onCommitted.addListener((data) => {
     const info = new URL(data.url)
     const domain = info.hostname
     const host = info.host
-    const result = list.some(item => item === domain || item === host)
+    const result = list.some(item => item === domain || item === host || item.indexOf(host)!==-1)
     if (result) {
       chrome.tabs.executeScript({
         code: `document.write(\`${content}\`)`
