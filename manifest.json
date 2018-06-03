@@ -2,6 +2,11 @@
   "manifest_version": 2,
   "name": "restc",
   "version": "1.0.1",
+  "description": "restc-chrome-extension is a chrome extension for restc",
+  "author": "Sky Ao",
+  "icon": {
+    "128": "./icons/icon128.png"
+  },
   "background": {
     "scripts": ["./src/index.js"],
     "presistent": false

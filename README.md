@@ -42,4 +42,3 @@ For the simplicity of the code, I don't use any build tools such as `webpack` or
 
 - [ ] A global switch to enable / disable restc
 - [ ] A more friendly UI for popup
-- [ ] Icon and more information in manifeset
